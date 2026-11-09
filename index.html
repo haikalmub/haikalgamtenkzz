@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAIKAL MUBAROK | PERSONAL PROFILE</title>
+    <!-- Import Metal & Brutal Gothic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Oswald:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-black: #080808;
+            --card-bg: #121212;
+            --blood-red: #8b0000;
+            --bright-red: #ff0000;
+            --crimson: #dc143c;
+            --text-light: #e0e0e0;
+            --border-red: #4a0000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            font-family: 'Oswald', sans-serif;
+            background-image: 
+                radial-gradient(circle at 50% 20%, #2a0000 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, #1a0000 0%, transparent 50%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* Overlay Noise/Texture & Splatter Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            position: relative;
+            z-index: 20;
+        }
+
+        /* Header Style dengan Font Death Metal / Gothic */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .metal-title {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 4rem;
+            color: var(--bright-red);
+            text-shadow: 
+                0 0 10px var(--blood-red),
+                3px 3px 0px #000,
+                -2px -2px 0px #000,
+                0px 5px 15px rgba(255, 0, 0, 0.8);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        .metal-subtitle {
+            font-family: 'Creepster', cursive;
+            color: #888;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            margin-top: -10px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* SVG Coretan Duri / Scratch Graphic */
+        .spikes-divider {
+            width: 100%;
+            height: 40px;
+            margin: 20px 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 L150,90 L300,10 L450,110 L600,20 L750,100 L900,5 L1050,85 L1200,0 L1200,120 L0,120 Z" fill="%238b0000"/></svg>');
+            background-size: cover;
+            opacity: 0.8;
+        }
+
+        /* Card Section Styling */
+        .profile-card {
+            background: var(--card-bg);
+            border: 2px solid var(--blood-red);
+            box-shadow: 0 0 25px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(0,0,0,0.9);
+            padding: 30px;
+            border-radius: 4px;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Hiasan Coretan Duri di Sudut Card */
+        .profile-card::before, .profile-card::after {
+            content: "☠";
+            font-size: 2rem;
+            color: var(--bright-red);
+            position: absolute;
+            text-shadow: 0 0 10px var(--bright-red);
+        }
+        .profile-card::before { top: 10px; left: 15px; }
+        .profile-card::after { bottom: 10px; right: 15px; }
+
+        .section-title {
+            font-family: 'Metal Mania', cursive;
+            font-size: 2.2rem;
+            color: var(--bright-red);
+            border-bottom: 2px dashed var(--blood-red);
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .info-group {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .info-label {
+            color: #ff4d4d;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: #fff;
+        }
+
+        .info-value a {
+            color: var(--bright-red);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .info-value a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px var(--bright-red);
+        }
+
+        /* Tag Hobi & Skill (Gaya Brutal) */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #1a0000;
+            border: 1px solid var(--bright-red);
+            color: #fff;
+            padding: 6px 14px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px #000;
+            box-shadow: 3px 3px 0px var(--blood-red);
+            transform: rotate(-1deg);
+            transition: all 0.2s ease;
+        }
+
+        .tag:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .tag:hover {
+            transform: scale(1.08) rotate(0deg);
+            background: var(--bright-red);
+            color: #000;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            font-family: monospace;
+        }
+
+        /* Animations */
+        @keyframes pulseGlow {
+            0% {
+                text-shadow: 0 0 10px var(--blood-red), 0 0 20px var(--blood-red);
+            }
+            100% {
+                text-shadow: 0 0 20px var(--bright-red), 0 0 35px var(--bright-red), 0 0 50px var(--blood-red);
+            }
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 600px) {
+            .metal-title { font-size: 2.8rem; }
+            .metal-subtitle { font-size: 1.3rem; }
+            .profile-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Utama -->
+        <header>
+            <h1 class="metal-title">HAIKAL MUBAROK</h1>
+            <p class="metal-subtitle">PERSONAL PROFILE & NETWORK ENGINEER</p>
+        </header>
+
+        <div class="spikes-divider"></div>
+
+        <!-- Card Profil -->
+        <div class="profile-card">
+            
+            <!-- Bio / Informasi Kontak -->
+            <h2 class="section-title">⚡ DATA DIRI & KONTAK</h2>
+            
+            <div class="info-group">
+                <span class="info-label">Nama Lengkap :</span>
+                <span class="info-value">Haikal Mubarok</span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">Email :</span>
+                <span class="info-value"><a href="mailto:haikalmub11@gmail.com">haikalmub11@gmail.com</a></span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">No. HP / WhatsApp :</span>
+                <span class="info-value"><a href="https://wa.me/6285739092343" target="_blank">0857-3909-2343</a></span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">Alamat Rumah :</span>
+                <span class="info-value">Jl. Raden Patah no. 28, Lk. Santren Kelurahan Tanggung, Kec. Kepanjenkidul, Kota Blitar, Jawa Timur</span>
+            </div>
+
+            <!-- Keahlian Utama -->
+            <h2 class="section-title">🔥 KEAHLIAN / SKILL</h2>
+            <div class="tag-container">
+                <div class="tag">Pemasangan & Instalasi Jaringan</div>
+                <div class="tag">FTTH (Fiber to the Home)</div>
+                <div class="tag">Fiber Optic Splicing</div>
+                <div class="tag">Network Troubleshooting</div>
+            </div>
+
+            <!-- Hobi & Minat -->
+            <h2 class="section-title">🩸 HOBI & MINAT</h2>
+            <div class="tag-container">
+                <div class="tag">🏓 Tenis Meja</div>
+                <div class="tag">🎣 Memancing</div>
+                <div class="tag">🎸 Music Metal</div>
+            </div>
+
+        </div>
+
+        <div class="spikes-divider"></div>
+
+        <footer>
+            <p>&copy; 2026 HAIKAL MUBAROK — HOSTER ON GITHUB PAGES</p>
+        </footer>
+    </div>
+
+</body>
+  </html>
